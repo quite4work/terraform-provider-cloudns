@@ -52,6 +52,13 @@ func resourceDnsRecord() *schema.Resource {
 				Required:    true,
 				ForceNew:    false,
 			},
+			"priority": {
+				Description: "Priority for MX or SRV record (eg: `something.cloudns.net 600 in MX [10] 1.2.3.4`)",
+				Type:        schema.TypeInt,
+				Optional:    true,
+				ForceNew:    false,
+				Default:     10,
+			},
 		},
 	}
 }
@@ -174,13 +181,15 @@ func toApiRecord(d *schema.ResourceData) cloudns.Record {
 	rtype := d.Get("type").(string)
 	value := d.Get("value").(string)
 	ttl := d.Get("ttl").(int)
+	priority := d.Get("priority").(int)
 
 	return cloudns.Record{
-		ID:     id,
-		Host:   name,
-		Domain: zone,
-		Rtype:  rtype,
-		Record: value,
-		TTL:    ttl,
+		ID:       id,
+		Host:     name,
+		Domain:   zone,
+		Rtype:    rtype,
+		Record:   value,
+		TTL:      ttl,
+		Priority: priority,
 	}
 }
