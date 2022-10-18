@@ -190,6 +190,7 @@ func resourceImportStateContext(ctx context.Context, d *schema.ResourceData, met
 				tflog.Error(ctx, fmt.Sprintf("IMPORT error updateState(): %s", err))
 				return nil, err
 			}
+			d.SetId(actualId)
 			tflog.Debug(ctx, fmt.Sprintf("IMPORT %s.%s %d in %s %s", zoneRecord.Host, zoneRecord.Domain, zoneRecord.TTL, zoneRecord.Rtype, zoneRecord.Record))
 			recordFound = true
 			break
