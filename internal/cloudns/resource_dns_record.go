@@ -59,13 +59,6 @@ func resourceDnsRecord() *schema.Resource {
 				Required:    true,
 				ForceNew:    false,
 			},
-			"priority": {
-				Description: "Priority for MX and SRV records (eg: `something.cloudns.net 600 in MX [10] 1.2.3.4`)",
-				Type:        schema.TypeInt,
-				Optional:    true,
-				ForceNew:    false,
-				Default:     10,
-			},
 		},
 	}
 }
@@ -73,6 +66,9 @@ func resourceDnsRecord() *schema.Resource {
 func resourceDnsRecordCreate(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
 	clientConfig := meta.(ClientConfig)
 	recordToCreate := toApiRecord(d)
+	if recordToCreate.Rtype == "MX" || recordToCreate.Rtype == "SRV" {
+		recordToCreate.Priority = 10
+	}
 
 	tflog.Debug(ctx, fmt.Sprintf("CREATE %s.%s %d in %s %s", recordToCreate.Host, recordToCreate.Domain, recordToCreate.TTL, recordToCreate.Rtype, recordToCreate.Record))
 
@@ -242,15 +238,13 @@ func toApiRecord(d *schema.ResourceData) cloudns.Record {
 	rtype := d.Get("type").(string)
 	value := d.Get("value").(string)
 	ttl := d.Get("ttl").(int)
-	priority := d.Get("priority").(int)
 
 	return cloudns.Record{
-		ID:       id,
-		Host:     name,
-		Domain:   zone,
-		Rtype:    rtype,
-		Record:   value,
-		TTL:      ttl,
-		Priority: priority,
+		ID:     id,
+		Host:   name,
+		Domain: zone,
+		Rtype:  rtype,
+		Record: value,
+		TTL:    ttl,
 	}
 }
