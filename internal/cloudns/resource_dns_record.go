@@ -60,7 +60,7 @@ func resourceDnsRecord() *schema.Resource {
 				ForceNew:    false,
 			},
 			"priority": {
-				Description: "Priority for MX or SRV record (eg: `something.cloudns.net 600 in MX [10] 1.2.3.4`)",
+				Description: "Priority for MX and SRV records (eg: `something.cloudns.net 600 in MX [10] 1.2.3.4`)",
 				Type:        schema.TypeInt,
 				Optional:    true,
 				ForceNew:    false,
