@@ -66,7 +66,7 @@ func resourceDnsRecord() *schema.Resource {
 func resourceDnsRecordCreate(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
 	clientConfig := meta.(ClientConfig)
 	recordToCreate := toApiRecord(d)
-	if recordToCreate.Rtype == "MX" || recordToCreate.Rtype == "SRV" {
+	if recordToCreate.Rtype == "MX" {
 		recordToCreate.Priority = 10
 	}
 
