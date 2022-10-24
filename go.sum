@@ -215,8 +215,8 @@ github.com/posener/complete v1.1.1/go.mod h1:em0nMJCgc9GFtwrmVmEMR/ZL6WyhyjMBndr
 github.com/posener/complete v1.2.3 h1:NP0eAhjcjImqslEwo/1hq7gpajME0fTLTezBKDqfXqo=
 github.com/posener/complete v1.2.3/go.mod h1:WZIdtGGp+qx0sLrYKtIRAruyNpv6hFCicSgv7Sy7s/s=
 github.com/prometheus/client_model v0.0.0-20190812154241-14fe0d1b01d4/go.mod h1:xMI15A0UPsDsEKsMN9yxemIoYk6Tm2C1GtYGdfGttqA=
-github.com/quite4work/cloudns-go v0.0.0-20221012140855-d3164aaa3197 h1:kJKagQ7MCvnGqsYL1iKX5nq2/dF9PvhGkiEJB79hA+c=
-github.com/quite4work/cloudns-go v0.0.0-20221012140855-d3164aaa3197/go.mod h1:JhTZSJDlEPHz1sIwJ6HWGexPFAny2yx6U69MoQzwIUY=
+github.com/quite4work/cloudns-go v0.0.0-20221024114348-4c83d6248890 h1:OV0TTW1t8w+xJKWBKhj4N1H8ZE3Jfz1ibm+KeAVdUiU=
+github.com/quite4work/cloudns-go v0.0.0-20221024114348-4c83d6248890/go.mod h1:JhTZSJDlEPHz1sIwJ6HWGexPFAny2yx6U69MoQzwIUY=
 github.com/rogpeppe/fastuuid v1.2.0/go.mod h1:jVj6XXZzXRy/MSR5jhDC/2q6DgLz+nrA6LYCDYWNEvQ=
 github.com/rogpeppe/go-internal v1.6.1 h1:/FiVV8dS/e+YqF2JvO3yXRFbBLTIuSDkuC7aBOAvL+k=
 github.com/russross/blackfriday v1.6.0 h1:KqfZb0pUVN2lYqZUYRddxF4OR8ZMURnJIG5Y3VRLtww=
