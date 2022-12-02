@@ -75,4 +75,4 @@ require (
 	google.golang.org/protobuf v1.28.1 // indirect
 )
 
-replace github.com/sta-travel/cloudns-go v0.0.0-20200217151626-28ac622cf3b2 => github.com/quite4work/cloudns-go v0.0.0-20221024120351-9d15080c4fa7
+replace github.com/sta-travel/cloudns-go v0.0.0-20200217151626-28ac622cf3b2 => github.com/matschundbrei/cloudns-go v0.0.0-20221128092636-003683be121a
