@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-log/tflog"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
-	"github.com/sta-travel/cloudns-go"
+	"github.com/matschundbrei/cloudns-go"
 )
 
 func resourceDnsRecord() *schema.Resource {
